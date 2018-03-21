@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+# Repository for collecting Locale data for Ruby on Rails I18n 
+# as well as other interesting, Rails related I18n stuff
+gem 'rails-i18n'
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+# Manage Procfile-based applications
+gem 'foreman'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -35,10 +42,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # For tests
+  # A Ruby static code analyzer, based on the community Ruby style guide.
+  gem 'rubocop', require: false
+  # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov', require: false, group: :test
+ # For tests
   gem 'rspec-rails', '~> 3.7'
   # For frontend tests
   gem 'capybara'
+  # Better error page for Rack apps
+  gem 'better_errors'
 end
 
 group :development do
