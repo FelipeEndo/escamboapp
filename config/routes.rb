@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   namespace :site do
+=======
+  devise_for :admins
+  devise_for :members
+>>>>>>> 3aa6a833a92d87e51d50c09a8073cfc0a0a00bff
   get 'home/index'
   end
 

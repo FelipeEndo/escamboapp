@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180423152205) do
+=======
+ActiveRecord::Schema.define(version: 20180422163024) do
+>>>>>>> 3aa6a833a92d87e51d50c09a8073cfc0a0a00bff
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180423152205) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+<<<<<<< HEAD
   create_table "ads", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.text     "description"
@@ -43,6 +48,8 @@ ActiveRecord::Schema.define(version: 20180423152205) do
   add_index "ads", ["category_id"], name: "index_ads_on_category_id"
   add_index "ads", ["member_id"], name: "index_ads_on_member_id"
 
+=======
+>>>>>>> 3aa6a833a92d87e51d50c09a8073cfc0a0a00bff
   create_table "categories", force: :cascade do |t|
     t.string   "description", limit: 60
     t.datetime "created_at",             null: false
