@@ -3,8 +3,7 @@ Rails.application.configure do
   
   #Foreman output
   $stdout.sync = true
-  # Better_errors
-  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+  BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
   
   #Devise config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

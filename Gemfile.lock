@@ -249,6 +249,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   bootstrap_sb_admin_base_v2
   byebug
   capybara
