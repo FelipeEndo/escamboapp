@@ -29,5 +29,6 @@ puts 'Cadastrando ADMINISTRADOR Padrão...'
   Admin.create!(name: Faker::Name.name,
                 email: 'admin@admin.com',
                 password: '123456',
-                password_confirmation: '123456')
+                password_confirmation: '123456',
+                role: 0)
 puts 'ADMINISTRADOR cadastrado com sucesso!'
