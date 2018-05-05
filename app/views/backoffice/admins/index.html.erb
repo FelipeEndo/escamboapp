@@ -13,6 +13,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Nome</th>
                             <th>Email</th>
                             <th></th>
                         </tr>
@@ -21,6 +22,7 @@
                       <% @admins.each do |admin| %>
                         <tr>
                             <td><%= admin.id %></td>
+                            <td><%= admin.name %></td>
                             <td><%= admin.email %></td>
                             <td style='width: 100px'>
                               <%= link_to edit_backoffice_admin_path(admin), class:'btn btn-primary btn-circle' do %>
@@ -31,7 +33,7 @@
                                 <%= link_to backoffice_admin_path(admin),
                                     method: :delete,
                                     class:'btn btn-danger btn-circle',
-                                    data: {confirm:  "Você deseja excluír o Administrador (#{admin.email})?"} do %>
+                                    data: {confirm:  "Você deseja excluír o Administrador (<b>#{admin.email}</b>)?"} do %>
                                   <i class='fa fa-minus'></i>
                                 <% end %>
                              <% else %>
