@@ -5,8 +5,11 @@ Rails.application.configure do
   $stdout.sync = true
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
   
-  #Devise config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #MailCatcher config
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { address: "localhost", port: 8082 }
+
   
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
