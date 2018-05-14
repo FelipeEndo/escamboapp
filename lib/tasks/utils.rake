@@ -1,5 +1,5 @@
 namespace :utils do
-  desc "Cria administradores fake"
+  desc 'Cria administradores fake'
   task generate_admins: :environment do
     puts 'Cadastrando ADMINISTRADORES...'
     10.times do
@@ -11,6 +11,22 @@ namespace :utils do
                     )
     end
     puts 'ADMINISTRADORES cadastrados com sucesso!'
+  end
+  
+  desc 'Cria Anúncios Fake'
+  task generate_ads: :environment do
+    puts 'Cadastrando ANÚNCIOS...'
+    
+    100.times do
+      Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: Faker::Lorem.paragraph,
+        member: Member.all.sample,
+        category: Category.all.sample
+        )
+    end
+    
+    puts 'ANÚNCIOS Cadastrados com sucesso!'
   end
 
 end
