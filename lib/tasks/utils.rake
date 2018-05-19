@@ -22,7 +22,9 @@ namespace :utils do
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: Faker::Lorem.paragraph,
         member: Member.all.sample,
-        category: Category.all.sample
+        category: Category.all.sample,
+        price: "#{Random.rand(500)}, #{Random.rand(99)}",
+        picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
     end
     

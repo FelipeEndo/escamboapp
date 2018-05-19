@@ -37,6 +37,8 @@ gem 'enum_help'
 gem "pundit"
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails', '~>1'
+# Paperclip
+gem "paperclip", "~> 5.0.0"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
