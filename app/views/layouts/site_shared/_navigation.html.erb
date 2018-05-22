@@ -23,7 +23,10 @@
                     </li>
                     <% else %>
                     <li>
-                        <%= link_to current_member.email, '#', class:"navbar-brand" %>
+                        <%= link_to current_member.email, '#'%>
+                    </li>
+                    <li>
+                        <%= link_to 'Profile', site_profile_dashboard_index_path, class:"navbar-brand" %>
                     </li>
                     <li>
                         <%= link_to 'Sign Out', destroy_member_session_path, class:"navbar-brand", method: :delete %>
