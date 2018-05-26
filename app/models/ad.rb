@@ -9,5 +9,6 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   
   # Scopes
-  scope :last_six_by_created_desc, -> { limit(6).order created_at: :desc }
+  scope :desc_order, ->(quantity = 10) { limit(quantity).order created_at: :desc }
+  scope :self_ads, ->(member) { where(member: member) }
 end
