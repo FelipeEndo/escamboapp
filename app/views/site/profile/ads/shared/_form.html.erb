@@ -1,3 +1,7 @@
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag 'site/profile/ads' %>
+<% end %>
+
 <% if @ad.errors.any? %>
   <div class="alert alert-danger alert-dismissable">
      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -36,6 +40,16 @@
           <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
           <%= f.text_field :price, class:"form-control"%>
         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-2">
+      <div class="form-group">
+        <%= f.label :finish_date %>
+        <%= f.text_field :finish_date, class:"form-control datepicker",
+            value: (l(@ad.finish_date) if @ad.finish_date), placeholder: 'DD/MM/AAAA' %>
       </div>
     </div>
   </div>

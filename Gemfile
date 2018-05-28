@@ -39,6 +39,8 @@ gem "pundit"
 gem 'money-rails', '~>1'
 # Paperclip
 gem "paperclip", "~> 5.0.0"
+# jQuery UI for the Rails asset pipeline 
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
