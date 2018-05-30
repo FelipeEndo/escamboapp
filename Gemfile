@@ -44,7 +44,10 @@ gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
-  gem 'rails-assets-notifyjs'
+  # Bootstrap Notify
+  gem 'rails-assets-mouse0270--bootstrap-growl'
+  # Animate CSS
+  gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
 end
 # Use ActiveModel has_secure_password
