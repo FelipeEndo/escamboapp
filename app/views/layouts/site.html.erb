@@ -17,7 +17,12 @@
 
   <body>
     <%= render partial: 'layouts/site_shared/navigation' %>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <%= render partial: 'layouts/site_shared/categories' %>
+        <%= yield %>
+      </div>
+    </div>
     <%= render partial: 'layouts/site_shared/footer' %>
     
     <%= javascript_include_tag 'application' %>

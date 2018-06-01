@@ -1,17 +1,4 @@
     <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-3">
-                <p class="lead">Categorias</p>
-                <div class="list-group">
-                  <% @categories.each do |category| %>
-                    <a href="#" class="list-group-item"> <%= category.description %></a>
-                  <% end %>
-                </div>
-            </div>
-
             <div class="col-md-9">
 
                 <div class="row carousel-holder">
@@ -52,7 +39,8 @@
                               <%= image_tag ad.picture.url(:medium) %>
                               <div class="caption">
                                   <h4 class="pull-right"><%= humanized_money_with_symbol ad.price %></h4>
-                                  <h4><a href="#"><%= truncate ad.title, length: 20 %></a>
+                                  <h4>
+                                      <%= link_to (truncate ad.title, length: 20), site_ad_detail_path(ad) %>
                                   </h4>
                                   <p><%= truncate ad.description, length: 100 %></p>
                               </div>
@@ -73,10 +61,6 @@
                 </div>
 
             </div>
-
-        </div>
-
-    </div>
     <!-- /.container -->
 
 
