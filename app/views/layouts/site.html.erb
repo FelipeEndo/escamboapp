@@ -16,13 +16,9 @@
   </head>
 
   <body>
+    <div id='global-spin' class="loading" style="display: none;">Loading&#8230;</div>
     <%= render partial: 'layouts/site_shared/navigation' %>
-    <div class="container">
-      <div class="row">
-        <%= render partial: 'layouts/site_shared/categories' %>
         <%= yield %>
-      </div>
-    </div>
     <%= render partial: 'layouts/site_shared/footer' %>
     
     <%= javascript_include_tag 'application' %>

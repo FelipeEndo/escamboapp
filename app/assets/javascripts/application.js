@@ -14,5 +14,16 @@
 //= require jquery_ujs
 //= require remarkable-bootstrap-notify.js
 
+/* Spin */
+$(document).ready(function() {
+  // Global ajax cursor change
+  $(document)
+    .ajaxStart(function () {
+        $('#global-spin').fadeIn('slow');
+    })
+    .ajaxStop(function () {
+        $('#global-spin').fadeOut('slow');
+    });
+});
 
 
