@@ -42,6 +42,8 @@ gem "paperclip", "~> 5.0.0"
 # jQuery UI for the Rails asset pipeline 
 gem 'jquery-ui-rails'
 
+gem 'redcarpet'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
   # Bootstrap Notify
@@ -77,10 +79,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
   # Better error page for Rack apps
   gem "better_errors"
   gem "binding_of_caller"
@@ -88,5 +88,7 @@ group :development do
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   # Catches mail and serves it through a dream.
   gem 'mailcatcher'
+  # Markdown Lorem Ipsum generator 
+  gem 'doctor_ipsum'
 end
 

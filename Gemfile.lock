@@ -94,6 +94,8 @@ GEM
       devise (>= 4.4)
     diff-lcs (1.3)
     docile (1.3.0)
+    doctor_ipsum (0.3.1)
+      i18n
     dotenv (0.7.0)
     enum_help (0.0.17)
       activesupport (>= 3.0.0)
@@ -219,6 +221,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
+    redcarpet (3.3.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -318,6 +321,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
+  doctor_ipsum
   enum_help
   faker!
   foreman
@@ -335,6 +339,7 @@ DEPENDENCIES
   rails-assets-mouse0270--bootstrap-growl!
   rails-erd
   rails-i18n
+  redcarpet
   rspec-rails (~> 3.7)
   rubocop
   sass-rails (~> 5.0)
