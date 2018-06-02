@@ -4,7 +4,7 @@ class Ad < ActiveRecord::Base
   
   
   # Associations
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   belongs_to :member
   
   # Validates
@@ -21,6 +21,7 @@ class Ad < ActiveRecord::Base
   # Scopes
   scope :desc_order, ->(quantity = 10) { limit(quantity).order created_at: :desc }
   scope :self_ads, ->(member) { where(member: member) }
+  scope :where_category, ->(id) { where(category: id) }
   
   private
   
