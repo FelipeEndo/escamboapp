@@ -50,7 +50,12 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-mouse0270--bootstrap-growl'
   # Animate CSS
   gem 'rails-assets-animate-css'
+  # BootboxJS
   gem 'rails-assets-bootbox'
+  # Bootstrap Markdown
+  gem 'rails-assets-bootstrap-markdown'
+  # Marked
+  gem 'rails-assets-marked'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
