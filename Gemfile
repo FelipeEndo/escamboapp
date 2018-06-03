@@ -56,6 +56,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-markdown'
   # Marked
   gem 'rails-assets-marked'
+  # FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+  gem 'friendly_id', '~> 5.2.0'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
