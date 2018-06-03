@@ -41,8 +41,10 @@ gem 'money-rails', '~>1'
 gem "paperclip", "~> 5.0.0"
 # jQuery UI for the Rails asset pipeline 
 gem 'jquery-ui-rails'
-
+# The safe Markdown parser. 
 gem 'redcarpet'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+gem 'wiselinks'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
