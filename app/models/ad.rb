@@ -19,9 +19,14 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   
   # Scopes
-  scope :desc_order, ->(quantity = 10) { limit(quantity).order created_at: :desc }
+  scope :desc_order, ->(quantity = 10, page) {
+        limit(quantity).order(created_at: :desc).page(page).per(9)
+        }
   scope :self_ads, ->(member) { where(member: member) }
   scope :by_category, ->(id) { where(category: id) }
+  scope :search, ->(query, page) { 
+        where("title LIKE ?", "%#{query}%").page(page).per(9)
+        }
   
   private
   
