@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :send_mail, only: [:edit, :create]
   resources :categories, only: [:index, :new, :create, :update, :edit]
   resources :admins, only: [:index, :new, :create, :update, :edit, :destroy]
+  resources :diagrams, only: [:index]
   get 'dashboard', to: 'dashboard#index'
   end
 

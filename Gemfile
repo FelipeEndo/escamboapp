@@ -103,5 +103,7 @@ group :development do
   gem 'mailcatcher'
   # Markdown Lorem Ipsum generator 
   gem 'doctor_ipsum'
+  
+  gem "rails-erd"
 end
 

@@ -2,6 +2,8 @@ class Ad < ActiveRecord::Base
   # Callbacks
   before_save :md_to_html
   
+  # Constants
+  QTT_PER_PAGE = 6
   
   # Associations
   belongs_to :category, counter_cache: true
@@ -19,13 +21,13 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   
   # Scopes
-  scope :desc_order, ->(quantity = 10, page) {
-        limit(quantity).order(created_at: :desc).page(page).per(9)
-        }
+  scope :desc_order, ->(page) {
+                    order(created_at: :desc).page(page).per(QTT_PER_PAGE)
+                     }
   scope :self_ads, ->(member) { where(member: member) }
   scope :by_category, ->(id) { where(category: id) }
   scope :search, ->(query, page) { 
-        where("title LIKE ?", "%#{query}%").page(page).per(9)
+        where("title LIKE ?", "%#{query}%").page(page).per(QTT_PER_PAGE)
         }
   
   private
