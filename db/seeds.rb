@@ -19,7 +19,7 @@ categories = [ 'Pet e acessórios',
                'Empregos e Negócios' ]
 
 categories.each do |cat|
-  category.find_or_create_by!(description: cat)
+  Category.find_or_create_by!(description: cat)
 end
 puts 'CATEGORIAS cadastradas com sucesso!'
 ###############################################

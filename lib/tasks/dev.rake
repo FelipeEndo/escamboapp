@@ -11,6 +11,7 @@ namespace :dev do
     puts %x(rake dev:generate_admins)
     puts %x(rake dev:generate_members)
     puts %x(rake dev:generate_ads)
+    puts %x(rake dev:generate_comments)
     puts 'Setup completado com sucesso!'
   end
   
@@ -38,7 +39,6 @@ namespace :dev do
                       )
      end
     puts 'MEMBROS cadastrados com sucesso!!'
-  
   end
   
   desc 'Cria Anúncios Fake'
@@ -52,7 +52,7 @@ namespace :dev do
         description_short: Faker::Lorem.sentence([2,3,4,5].sample),
         member: Member.first,
         category: Category.all.sample,
-        price: "#{Random.rand(500)}, #{Random.rand(99)}",
+        price: "#{Random.rand(1..500)}, #{Random.rand(99)}",
         finish_date: Date.today + Random.rand(90),
         picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
@@ -65,13 +65,29 @@ namespace :dev do
         description_short: Faker::Lorem.sentence([2,3,4,5].sample),
         member: Member.all.sample,
         category: Category.all.sample,
-        price: "#{Random.rand(500)}, #{Random.rand(99)}",
+        price: "#{Random.rand(1..500)}, #{Random.rand(99)}",
         finish_date: Date.today + Random.rand(90),
         picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
     end
     
     puts 'ANÚNCIOS Cadastrados com sucesso!'
+  end
+  
+  desc 'Cria Comentarios fake'
+  task generate_comments: :environment do
+    puts 'Cadastrando COMENTARIOS...'
+    
+    Ad.all.each do |ad|
+      (Random.rand(1..4)).times do
+        Comment.create!(
+         body: Faker::Lorem.paragraph([1,2,3].sample),
+         member: Member.all.sample,
+         ad: ad
+         )
+      end
+    end
+    puts 'COMENTARIOS cadastrados com sucesso!!'
   end
   
   def markdown_fake
