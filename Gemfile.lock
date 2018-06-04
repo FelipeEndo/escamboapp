@@ -228,6 +228,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
     rake (12.3.0)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -356,6 +357,7 @@ DEPENDENCIES
   rails-assets-mouse0270--bootstrap-growl!
   rails-erd
   rails-i18n
+  ratyrate
   redcarpet
   rspec-rails (~> 3.7)
   rubocop

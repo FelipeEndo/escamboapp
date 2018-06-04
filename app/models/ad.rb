@@ -1,9 +1,12 @@
 class Ad < ActiveRecord::Base
-  # Callbacks
-  before_save :md_to_html
-  
   # Constants
   QTT_PER_PAGE = 6
+  
+  # RatyRate Gem
+  ratyrate_rateable 'quality'
+  
+  # Callbacks
+  before_save :md_to_html
   
   # Associations
   belongs_to :category, counter_cache: true
