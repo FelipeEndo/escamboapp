@@ -33,6 +33,7 @@ class Ad < ActiveRecord::Base
   scope :search, ->(query, page) { 
         where("title LIKE ?", "%#{query}%").page(page).per(QTT_PER_PAGE)
         }
+  scope :random_ads, ->(quantity) { limit(quantity).order('RANDOM()') } 
   
   private
   
