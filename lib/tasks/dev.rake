@@ -33,10 +33,13 @@ namespace :dev do
   task generate_members: :environment do
     puts 'Cadastrando MEMBROS...'
      100.times do
-        Member.create!(email: Faker::Internet.email,
+        member = Member.create!(email: Faker::Internet.email,
                       password: '123456',
                       password_confirmation: '123456'
                       )
+        ProfileMember.create!(first_name: Faker::Name.first_name,
+                              second_name: Faker::Name.last_name,
+                              member: member)
      end
     puts 'MEMBROS cadastrados com sucesso!!'
   end

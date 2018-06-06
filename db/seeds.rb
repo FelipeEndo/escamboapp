@@ -27,7 +27,7 @@ puts '.....'
 puts '.....'
 puts 'Cadastrando ADMINISTRADOR Padrão...'
   Admin.create!(name: Faker::Name.name,
-                email: 'admin@admin.com',
+                email: 'admin1@admin.com',
                 password: '123456',
                 password_confirmation: '123456',
                 role: 0)
@@ -36,7 +36,10 @@ puts 'ADMINISTRADOR cadastrado com sucesso!'
 puts '.....'
 puts '.....'
 puts 'Cadastrando MEMBRO Padrão...'
-  Member.create!(email: 'member@member.com',
-                password: '123456',
-                password_confirmation: '123456')
+  member = Member.create!(email: 'member@member.com',
+                      password: '123456',
+                      password_confirmation: '123456')
+  profile = ProfileMember.create!(first_name: 'Felipe',
+                              second_name: 'Endo',
+                              member: member)
 puts 'MEMBRO cadastrado com sucesso!'

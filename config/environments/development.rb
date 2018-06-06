@@ -5,6 +5,9 @@ Rails.application.configure do
   $stdout.sync = true
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
   
+  # Devise Config
+  config.action_mailer.default_url_options = { host: 'https://rails-endodev.c9users.io', port: 8080 }
+  
   #MailCatcher config
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
